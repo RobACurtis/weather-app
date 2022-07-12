@@ -17,16 +17,17 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-def home():
+@app.get("/{days}")
+def home(days: str):
   conn = psycopg2.connect("dbname=weather user=robcurtis")
   cur = conn.cursor()
   SQL = """
         SELECT *
         FROM weatherforecast
-        LIMIT 2;
+        LIMIT 2 OFFSET %s;
        """
-  cur.execute(SQL)
+  data = (days,)
+  cur.execute(SQL,data)
   rows = cur.fetchall()
   dailyWeather = []
   for r in rows:
@@ -34,14 +35,16 @@ def home():
       "id":r[0],
       "date": r[1],
       "timezone": r[2],
-      "lattitude": r[3],
-      "longitude": r[4],
-      "sunrise": r[5],
-      "sunset": r[6],
-      "description": r[7],
-      "humidity": r[8],
-      "high": r[9],
-      "low": r[10]
+      "timezoneOffset": r[3],
+      "lattitude": r[4],
+      "longitude": r[5],
+      "sunrise": r[6],
+      "sunset": r[7],
+      "description": r[8],
+      "main": r[9],
+      "humidity": r[10],
+      "high": r[11],
+      "low": r[12]
       })
     cur.close()
     conn.close()

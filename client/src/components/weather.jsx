@@ -4,15 +4,25 @@ import getTime from './getTime';
 
 export default function WeatherCard(props) {
   const date = getDate(props.data.date);
-  const sunrise = getTime(props.data.sunrise);
-  const sunset = getTime(props.data.sunset);
+  const sunrise = getTime(props.data.sunrise, props.data.timezone);
+  const sunset = getTime(props.data.sunset, props.data.timezone);
   const description = props.data.description;
+  const main = props.data.main;
   const humidity = props.data.humidity;
   const high = props.data.high;
   const low = props.data.low;
-  const icon = 'images/sunny.png'
+  const images = {
+    'sunny': 'images/sunny.png',
+    'cloudy': 'images/cloudy.png',
+    'rain': 'images/rain.png'
+      }
+  let icon = images['sunny'];
+  if (main === 'Clouds') {
+    icon = images['cloudy']
+  } else if ( main === 'Rain') {
+    icon = images['rain']
+  }
 
-    // if (state.loading) return null;
     return (
       <>
       <div className="card" style={{ width: "18rem" }}>
