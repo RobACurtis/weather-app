@@ -1,6 +1,6 @@
 import React from 'react';
-import getDate from './date';
-import getTime from './getTime';
+import getDate from '../lib/get-date';
+import getTime from '../lib/get-time';
 
 export default function WeatherCard(props) {
   const date = getDate(props.data.date);
@@ -26,12 +26,12 @@ export default function WeatherCard(props) {
     return (
       <>
       <div className="card" style={{ width: "18rem" }}>
-        <div className="img-container row center">
+        <div className="img-container d-flex center">
           <img className="card-img-top icon" src={icon} alt="weather" />
         </div>
         <div className="card-body">
           <h5 className="card-title text-center">{date}</h5>
-          <ul className='list-group'>
+          <ul className='list-group text-center'>
             <li className='list-group-item'>{description}</li>
             <li className='list-group-item'>Humidity: {humidity} %</li>
               <li className='list-group-item'>High: {high} &deg;F</li>

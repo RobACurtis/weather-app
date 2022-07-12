@@ -4,7 +4,6 @@ import WeatherCard from './components/weather';
 export default function App() {
   const [data, addData] = useState([{}, {}])
   const [days, setDays] = useState(0);
-  // const date = Date()
   useEffect(() => {
     fetch(`http://localhost:8000/${days}`)
       .then(res => res.json())
@@ -47,16 +46,17 @@ export default function App() {
     <>
     <div className='background-image'></div>
       <div className='weather-container row center'>
-        <div className='title mb-3'>
-          <h2>Weather Forecast <br /> Raleigh, NC</h2>
+        <div className='title mb-3 cardo-font'>
+          <h1>7 Day Weather Forecast</h1>
+          <h2>Raleigh, NC</h2>
         </div>
-        <div className='container row center margin-zero justify-content-evenly'>
+        <div className='row center justify-content-evenly'>
           <WeatherCard data={data[0]} />
           <WeatherCard data={data[1]} />
         </div>
-        <div className="buttons d-flex justify-content-between mx-5">
-          <button onClick={() => setDays(days => days - 2)} type="button" className={`btn btn-small btn-primary ${(days <= 0) ? 'opacity-0 disabled' : ''}`}>Previous</button>
-          <button onClick={() => setDays(days => days + 2)} type="button" className={`btn btn-small btn-primary ${(days >= 6) ? 'opacity-0 disabled' : ''}`}>Next</button>
+        <div className="buttons row justify-content-between mx-5 padding-button-container">
+          <button onClick={() => setDays(days => days - 2)} type="button" className={`btn btn-small btn-outline-primary ${(days <= 0) ? 'opacity-0 disabled' : ''}`}><i className="fa-solid fa-left-long"></i></button>
+          <button onClick={() => setDays(days => days + 2)} type="button" className={`btn btn-small btn-outline-primary ${(days >= 6) ? 'opacity-0 disabled' : ''}`}><i className="fa-solid fa-right-long"></i></button>
         </div>
     </div>
   </>

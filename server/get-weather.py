@@ -33,7 +33,6 @@ def getWeatherData():
   cur.close()
   conn.close()
 
-
 schedule.every().day.at("00:00").do(getWeatherData)
 
 while True:
