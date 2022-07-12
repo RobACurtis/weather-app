@@ -1,19 +1,30 @@
 import psycopg2
-from fastapi import FastAPI, Path
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-conn = psycopg2.connect("dbname=weather user=robcurtis")
-cur = conn.cursor()
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+]
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def home():
+  conn = psycopg2.connect("dbname=weather user=robcurtis")
+  cur = conn.cursor()
   SQL = """
         SELECT *
-        FROM weatherforecast;
+        FROM weatherforecast
+        LIMIT 2;
        """
   cur.execute(SQL)
   rows = cur.fetchall()
@@ -32,4 +43,6 @@ def home():
       "high": r[9],
       "low": r[10]
       })
+    cur.close()
+    conn.close()
   return dailyWeather
