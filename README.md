@@ -24,8 +24,9 @@ I built this full stack, single page application as a challenge to learn how to 
   - User can view the weather for upcoming days
 
 ## Preview!
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/96838616/178612585-fcac0639-c08c-4bf7-8736-6f8774bcb0f1.gif)
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/96838616/178612378-ce505e1e-491d-4c39-a8ce-5c8cc7ca8e0e.gif)
+
 
 
 
