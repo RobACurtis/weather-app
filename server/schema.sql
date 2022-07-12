@@ -4,6 +4,7 @@ create schema "public";
 
 CREATE TABLE "weatherforecast" (
   "id" serial NOT NULL,
+	"dateRequested" TEXT NOT NULL,
   "date" TEXT NOT NULL,
 	"timezone" TEXT NOT NULL,
 	"timezoneOffset" TEXT NOT NULL,

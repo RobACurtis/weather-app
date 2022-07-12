@@ -4,7 +4,7 @@ import WeatherCard from './components/weather';
 export default function App() {
   const [data, addData] = useState([{}, {}])
   const [days, setDays] = useState(0);
-
+  // const date = Date()
   useEffect(() => {
     fetch(`http://localhost:8000/${days}`)
       .then(res => res.json())

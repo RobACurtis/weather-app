@@ -1,8 +1,10 @@
 import psycopg2
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from datetime import date
 
 app = FastAPI()
+today = str(date.today())
 
 origins = [
     "http://localhost:3000",
@@ -16,7 +18,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/{days}")
 def home(days: str):
   conn = psycopg2.connect("dbname=weather user=robcurtis")
@@ -24,27 +25,29 @@ def home(days: str):
   SQL = """
         SELECT *
         FROM weatherforecast
+        where "dateRequested" = %s
         LIMIT 2 OFFSET %s;
        """
-  data = (days,)
+  data = (today, days)
   cur.execute(SQL,data)
   rows = cur.fetchall()
   dailyWeather = []
   for r in rows:
     dailyWeather.append({
       "id":r[0],
-      "date": r[1],
-      "timezone": r[2],
-      "timezoneOffset": r[3],
-      "lattitude": r[4],
-      "longitude": r[5],
-      "sunrise": r[6],
-      "sunset": r[7],
-      "description": r[8],
-      "main": r[9],
-      "humidity": r[10],
-      "high": r[11],
-      "low": r[12]
+      "dateRequested": r[1],
+      "date": r[2],
+      "timezone": r[3],
+      "timezoneOffset": r[4],
+      "lattitude": r[5],
+      "longitude": r[6],
+      "sunrise": r[7],
+      "sunset": r[8],
+      "description": r[9],
+      "main": r[10],
+      "humidity": r[11],
+      "high": r[12],
+      "low": r[13]
       })
     cur.close()
     conn.close()
