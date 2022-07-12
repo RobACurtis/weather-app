@@ -60,7 +60,7 @@ npm install
     
 3. Make an account to get an API Key
 
-  https://openweathermap.org/api/one-call-api
+    Get your API key [here](https://openweathermap.org/api/one-call-api)
 
 4. Start postgreSQL.
 
