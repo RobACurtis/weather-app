@@ -82,9 +82,9 @@ createdb yourDatabaseName
 nano .bash_profile
 ```
 ```shell
-export WEATHER_API=youraccesskey
-export USER=databaseuser
-export WEATHERDB=nameofyourdatabase
+export WEATHER_API="youraccesskey"
+export USER="databaseuser"
+export WEATHERDB="nameofyourdatabase"
 ````
     
 - type ' x ' to save
@@ -98,6 +98,10 @@ pgweb --db=yourDatabaseName
   ```
   
 8. Import schema.sql into your database
+9. Run main.py to import weather data into your database (scheduled to run everyday at midnight)
+```shell
+  python3 get-weather.py
+  ```
  
 9. Start the server 
 
