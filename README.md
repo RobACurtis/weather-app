@@ -45,14 +45,18 @@ I built this full stack, single page application as a challenge to learn how to 
     git@github.com:RobACurtis/weather-app.git
     ```
 
-2. Install all dependencies with pip.
+2. Install all dependencies with pip and npm.
 
-    ```shell
-    pip install uvicorn
-    pip install psycopg2
-    pip install schedule
-    pip install fastapi
-    ```
+```shell
+pip install uvicorn
+pip install psycopg2
+pip install schedule
+pip install fastapi
+ ```
+    
+```shell
+npm install
+```
     
 3. Make an account to get an API Key
 
