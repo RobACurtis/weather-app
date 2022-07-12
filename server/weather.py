@@ -1,11 +1,18 @@
 import psycopg2
 import requests
-from datetime import datetime
+import os
 
-response = requests.get("https://api.openweathermap.org/data/2.5/onecall?lat=35.79911912060484&lon=-78.65971601699076&units=imperial&appid=")
+key = os.environ.get('WEATHER_API')
+user = os.environ.get('USER')
+db = os.environ.get('WEATHERDB')
+
+
+response = requests.get("https://api.openweathermap.org/data/2.5/onecall?lat=35.79911912060484&lon=-78.65971601699076&appid=" + key)
 weather = response.json()
 
-conn = psycopg2.connect("dbname=weather user=robcurtis")
+dbConnection="dbname={} user={}".format(db,user)
+
+conn = psycopg2.connect(dbConnection)
 cur = conn.cursor()
 
 dailyWeather = weather["daily"]
