@@ -23,8 +23,10 @@ I built this full stack, single page application as a challenge to learn how to 
   - User can view the weather for today and tomorrow
   - User can view the weather for upcoming days
 
-## Preview
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/96838616/178605471-25985a54-511e-42c0-b77a-0ab87f799444.gif)
+## Preview!
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/96838616/178612378-ce505e1e-491d-4c39-a8ce-5c8cc7ca8e0e.gif)
+
 
 
 # Development
