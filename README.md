@@ -41,9 +41,9 @@ I built this full stack, single page application as a challenge to learn how to 
 
 1. Clone the repository.
 
-    ```shell
-    git@github.com:RobACurtis/weather-app.git
-    ```
+```shell
+git@github.com:RobACurtis/weather-app.git
+```
 
 2. Install all dependencies with pip and npm.
 
@@ -100,9 +100,9 @@ pgweb --db=yourDatabaseName
 8. Import schema.sql into your database
 9. Run main.py to import weather data into your database (scheduled to run everyday at midnight)
 ```shell
-  python3 get-weather.py
-  ```
- 
+python3 get-weather.py
+```
+
 9. Start the server 
 
 ```shell
