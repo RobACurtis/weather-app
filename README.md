@@ -70,29 +70,30 @@ I built this full stack, single page application as a challenge to learn how to 
 createdb yourDatabaseName
   ```
 
-6. Add your API Key to your .bash_profile.
-      - open terminal
-      - in your home directory type 
-      
-  ```shell
+6. Set environment variables.
+  - open terminal
+  - in your home directory type 
 
-    nano .bash_profile
-    export WEATHER_API=youraccesskey
-    export USER=databaseuser
-    export WEATHERDB=nameofyourdatabase
-    type ' x ' to save
-    type ' y ' to confirm
-    then close out of terminal
+```shell
+nano .bash_profile
+```
+```shell
+export WEATHER_API=youraccesskey
+export USER=databaseuser
+export WEATHERDB=nameofyourdatabase
+````
+    
+- type ' x ' to save
+- type ' y ' to confirm
+- then close out of terminal
 
- ```
- 
-7. Import schema.sql into your database
-
-8. View your database through pgweb. You can view it in your browser at localhost:8081
+7. View your database through pgweb. You can view it in your browser at localhost:8081
 
 ```shell
 pgweb --db=yourDatabaseName
   ```
+  
+8. Import schema.sql into your database
  
 9. Start the server 
 
