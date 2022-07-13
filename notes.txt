@@ -23,7 +23,7 @@ to the information from the API.
 
 I would also like to include more functionality for the current day.
 Some ideas I have would be to make use of the minute forecast or hourly
-forecast to contstantly update the current day's weather information.
+forecast to constantly update the current day's weather information.
 Another consideration would be giving the user the option to enter
 specific coordinates to allow them to see the weather for any place they
 desire. I also would like to give more options for the icons that display
