@@ -90,7 +90,7 @@ export USER="databaseuser"
 export WEATHERDB="nameofyourdatabase"
 ````
 
-- type ' x ' to save
+- type ' ^x ' to save
 - type ' y ' to confirm
 - then close out of terminal
 
