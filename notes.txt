@@ -15,7 +15,8 @@ run everyday at midnight. This file, “get-weather.py” will add to the
 database the newest seven day forecast everyday while the server “main.py”
 will only send the most recent forecast data to the client.
 
-With more time to work on this application, I would like to consider
+With more time to work on this application, I would first implement error handling.
+I have not yet set up responses for failed api requests. I would also like to consider
 what data is displayed on the cards, the API gives a lot of options.
 The "description" given by the API is not worded very well, so some
 thought could go into how to describe the predicted weather according
