@@ -1,0 +1,30 @@
+Hello! I have completed the weather-app coding exercise.
+It was an enjoyable project and I wanted to include some
+thoughts about the design choices I made and other considerations
+for the app.
+
+For the frontend, I wanted the application to look similar to other
+weather apps on the web. I used bootstrap cards and classes as well as
+some custom css to style the application.I also decided to use React
+to work with the document object model and give functionality to the
+application.
+
+For the structure of the app, I used a postgreSQL database to store
+the forecast data and I created a python file which is scheduled to
+run everyday at midnight. This file, “get-weather.py” will add to the
+database the newest seven day forecast everyday while the server “main.py”
+will only send the most recent forecast data to the client.
+
+With more time to work on this application, I would like to consider
+what data is displayed on the cards, the API gives a lot of options.
+The "description" given by the API is not worded very well, so some
+thought could go into how to describe the predicted weather according
+to the information from the API.
+
+I would also like to include more functionality for the current day.
+Some ideas I have would be to make use of the minute forecast or hourly
+forecast to contstantly update the current day's weather information.
+Another consideration would be giving the user the option to enter
+specific coordinates to allow them to see the weather for any place they
+desire. I also would like to give more options for the icons that display
+according to the forecasted weather.

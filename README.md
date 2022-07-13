@@ -1,6 +1,5 @@
 # Weather App
 
-#### A fullstack web application to view a 7 day weather forecast. 
 
 I built this full stack single page application as a challenge to learn how to integrate a Python server with a React App.
 
@@ -18,7 +17,7 @@ I built this full stack single page application as a challenge to learn how to i
   - Schedule
   - psycopg2
 
-  
+
  ## Feature List
   - User can view the weather for today and tomorrow
   - User can view the weather for upcoming days
@@ -32,7 +31,7 @@ I built this full stack single page application as a challenge to learn how to i
 
 # Development
 
-### System Requirements 
+### System Requirements
 - Python 3
 - pip3
 - Postgres
@@ -40,7 +39,7 @@ I built this full stack single page application as a challenge to learn how to i
 - pgweb
 
 
-## Getting Started 
+## Getting Started
 
 1. Clone the repository.
 
@@ -56,11 +55,11 @@ pip install psycopg2
 pip install schedule
 pip install fastapi
  ```
-    
+
 ```shell
 npm install
 ```
-    
+
 3. Make an account to get an API Key
 
     Get your API key [here](https://openweathermap.org/api/one-call-api)
@@ -70,7 +69,7 @@ npm install
   ```shell
   brew services start postgresql
   ```
-  
+
 5. Create a database.
 
 ```shell
@@ -79,7 +78,7 @@ createdb yourDatabaseName
 
 6. Set environment variables.
   - open terminal
-  - in your home directory type 
+  - in your home directory type
 
 ```shell
 nano .bash_profile
@@ -89,7 +88,7 @@ export WEATHER_API="youraccesskey"
 export USER="databaseuser"
 export WEATHERDB="nameofyourdatabase"
 ````
-    
+
 - type ' x ' to save
 - type ' y ' to confirm
 - then close out of terminal
@@ -98,15 +97,15 @@ export WEATHERDB="nameofyourdatabase"
 
 ```shell
 pgweb --db=yourDatabaseName
-  ```
-  
-8. Import schema.sql into your database
+```
+
+8. Import the code from schema.sql into your database
 9. Run main.py to import weather data into your database (scheduled to run everyday at midnight)
 ```shell
 python3 get-weather.py
 ```
 
-9. Start the server 
+9. Start the server
 
 ```shell
 uvicorn main:app --reload
@@ -116,5 +115,3 @@ uvicorn main:app --reload
 ```shell
 npm run start
   ```
-
-
