@@ -1,8 +1,8 @@
 # Weather App
 
-#### A web application to view a 7 day weather forecast. 
+#### A fullstack web application to view a 7 day weather forecast. 
 
-I built this full stack, single page application as a challenge to learn how to integrate a Python server with a React App.
+I built this full stack single page application as a challenge to learn how to integrate a Python server with a React App.
 
 
 ## Technologies Used
