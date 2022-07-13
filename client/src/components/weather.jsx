@@ -33,8 +33,8 @@ export default function WeatherCard(props) {
           <h5 className="card-title text-center">{date}</h5>
           <ul className='list-group text-center'>
             <li className='list-group-item'>{description}</li>
-            <li className='list-group-item'>Humidity: {humidity} %</li>
-              <li className='list-group-item'>High: {high} &deg;F</li>
+            <li className='list-group-item'>Humidity: {humidity}%</li>
+              <li className='list-group-item'>High: {high}&deg;F</li>
               <li className='list-group-item'>Low: {low}&deg;F</li>
             <li className='list-group-item'>Sunrise Time: {sunrise}</li>
             <li className='list-group-item'>Sunset Time: {sunset}</li>
