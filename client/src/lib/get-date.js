@@ -30,6 +30,6 @@ export default function getDate(date) {
   const splitDate = newDate.split(" ");
   console.log(weekday[splitDate[0]]);
 
-  newDate = weekday[splitDate[0]] + ' ' + months[splitDate[1]] + ', ' + splitDate[2] + ' ' + splitDate[3];
+  newDate = weekday[splitDate[0]] + ' ' + months[splitDate[1]] + ' ' + splitDate[2] + ', ' + splitDate[3];
   return newDate;
 }
